@@ -1,0 +1,21 @@
+
+[1mFrom:[0m /mnt/c/users/cpari/dev/flatiron/projects/cli-project/permaculture_resources/lib/permaculture_resources/cli.rb:38 PermacultureResources::CLI#get_book_method:
+
+    [1;34m32[0m: [32mdef[0m [1;34mget_book_method[0m
+    [1;34m33[0m:     puts [31m[1;31m"[0m[31m[1;35m\n[0m[31mPlease select a number to find out more information about the book or type 'exit to quit.[1;35m\n[0m[31m[1;31m"[0m[31m[0m
+    [1;34m34[0m:     input = gets.strip
+    [1;34m35[0m:     index = input.to_i - [1;34m1[0m
+    [1;34m36[0m:     [32mif[0m index.between?([1;34m0[0m, list_books.length)
+    [1;34m37[0m:         book = @sorted_books[index]
+ => [1;34m38[0m:         binding.pry
+    [1;34m39[0m:         puts [31m[1;31m"[0m[31m[1;35m\n[0m[31m#{book.title}[0m[31m[1;35m\n[0m[31m[1;31m"[0m[31m[0m
+    [1;34m40[0m:         puts [31m[1;31m"[0m[31mby: #{book.author}[0m[31m[1;31m"[0m[31m[0m
+    [1;34m41[0m:         puts [31m[1;31m"[0m[31mprice: #{book.price}[0m[31m[1;31m"[0m[31m[0m
+    [1;34m42[0m:         want_more_info(book)
+    [1;34m43[0m:     [32melsif[0m input == [31m[1;31m"[0m[31mexit[1;31m"[0m[31m[0m
+    [1;34m44[0m:     [32melse[0m
+    [1;34m45[0m:         puts [31m[1;31m"[0m[31m[1;35m\n[0m[31mSorry! I don't understand that command.[1;35m\n[0m[31m[1;31m"[0m[31m[0m
+    [1;34m46[0m:         get_book_method
+    [1;34m47[0m:     [32mend[0m
+    [1;34m48[0m: [32mend[0m
+
