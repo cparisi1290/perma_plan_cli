@@ -1,15 +1,12 @@
-# PermacultureResources
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/permaculture_resources`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+# PermaPlanCli
+This Ruby gem provides a list of permaculture books and attributes provided by the website BookShop.org.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'permaculture_resources'
+gem 'perma_plan_cli'
 ```
 
 And then execute:
@@ -18,7 +15,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install permaculture_resources
+    $ gem install perma_plan_cli
 
 ## Usage
 
@@ -32,7 +29,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/permaculture_resources. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/permaculture_resources/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/perma_plan_cli. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/perma_plan_cli/blob/master/CODE_OF_CONDUCT.md).
 
 
 ## License
@@ -41,4 +38,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the PermacultureResources project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/permaculture_resources/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the PermaPlanCli project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/perma_plan_cli/blob/master/CODE_OF_CONDUCT.md).

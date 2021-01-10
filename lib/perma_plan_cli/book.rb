@@ -1,5 +1,5 @@
 class PermaPlanCli::Book
-    attr_accessor :title, :author, :price, :url, :description, :availability
+    attr_accessor :title, :author, :price, :url, :description
 
     @@all = [] 
 
