@@ -54,32 +54,7 @@ class PermaPlanCli::CLI
             puts Rainbow("price: #{book.price}").palevioletred
             want_more_info(book)     
         else 
-            puts ""
-            puts Rainbow("\nSee you on the homestead!\n").deepskyblue
-            puts ""
-            puts <<-'EOF'
-                       '
-            .      '      .
-      .      .     :     .      .
-       '.        ______       .'
-         '  _.-"`      `"-._ '
-          .'                '.
-   `'--. /                    \ .--'`
-        /                      \
-       ;                        ;
-  - -- |                        | -- -
-       |     _.                 |
-       ;    /__`A   ,_          ;
-   .-'  \   |= |;._.}{__       /  '-.
-      _.-""-|.' # '. `  `.-"{}<._
-            / 1990  \     \  x   `"
-       ----/         \_.-'|--X----
-       -=_ |         |    |- X.  =_
-      - __ |_________|_.-'|_X-X##
-      ... `'-._|_|;:;_.-'` '::.  `"-
-       .:;.      .:.   ::.     '::."
-       EOF
-  
+            self.exit
         end
     end
 
@@ -102,47 +77,27 @@ class PermaPlanCli::CLI
             list_books
             get_book_method
         elsif input == "EXIT" || "exit"
-            puts ""
-            puts Rainbow("\nSee you on the homestead!\n").deepskyblue
-            puts ""
-            puts <<-'EOF'
-                       '
-            .      '      .
-      .      .     :     .      .
-       '.        ______       .'
-         '  _.-"`      `"-._ '
-          .'                '.
-   `'--. /                    \ .--'`
-        /                      \
-       ;                        ;
-  - -- |                        | -- -
-       |     _.                 |
-       ;    /__`A   ,_          ;
-   .-'  \   |= |;._.}{__       /  '-.
-      _.-""-|.' # '. `  `.-"{}<._
-            / 1990  \     \  x   `"
-       ----/         \_.-'|--X----
-       -=_ |         |    |- X.  =_
-      - __ |_________|_.-'|_X-X##
-      ... `'-._|_|;:;_.-'` '::.  `"-
-       .:;.      .:.   ::.     '::."
-       EOF
+            self.exit
         end
     end
 
     def show_book_list_again
         puts Rainbow("Type 'list' to see the selection of books again - type 'exit' to quit.\n").deepskyblue
         show_book_list_again_input = gets.strip.upcase
-        until ["list", "LIST"].include?(show_book_list_again_input)
+        until ["list", "LIST", "EXIT", "exit"].include?(show_book_list_again_input)
             puts Rainbow("Please type LIST to continue or exit to quit.").deepskyblue
             show_book_list_again_input = gets.strip.upcase
         end
         if show_book_list_again_input == "LIST" || show_book_list_again_input == "list"
             list_books
             get_book_method
-        # elsif show_book_list_again_input == "EXIT" || "exit"
-        else
-            puts ""
+        elsif show_book_list_again_input == "EXIT" || "exit"
+            self.exit
+        end
+    end
+
+    def exit
+        puts ""
             puts Rainbow("\nSee you on the homestead!\n").deepskyblue
             puts ""
             puts <<-'EOF'
@@ -167,6 +122,5 @@ class PermaPlanCli::CLI
       ... `'-._|_|;:;_.-'` '::.  `"-
        .:;.      .:.   ::.     '::."
        EOF
-        end
     end
 end
