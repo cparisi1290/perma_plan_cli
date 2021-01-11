@@ -40,4 +40,8 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
+<<<<<<< HEAD
 Everyone interacting in the PermaPlanCli project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/perma_plan_cli/blob/master/CODE_OF_CONDUCT.md).
+=======
+Everyone interacting in the PermacultureResources project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/perma_plan_cli/blob/master/CODE_OF_CONDUCT.md).
+>>>>>>> d990a817304373391fccb742915a2eed59a33bf2
