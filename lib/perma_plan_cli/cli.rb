@@ -17,7 +17,7 @@ class PermaPlanCli::CLI
         sleep(1)
         puts "                   " + tractor
         sleep(1)
-        puts Rainbow("              " + tractor + "       "    "Your list is coming up...").palevioletred
+        puts Rainbow("               " + tractor + "       "+"Your list is coming up...").palevioletred
         
         PermaPlanCli::Scraper.scrape_books
         sort_books
@@ -45,53 +45,55 @@ class PermaPlanCli::CLI
             puts Rainbow("Please select a valid number or type exit to quit.\n").deepskyblue
             input = gets.strip
         end
-                
-        if input != "exit" 
+               
+        if input.to_i != 0
             index = input.to_i - 1
             book = @sorted_books[index]
             puts Rainbow("\n#{book.title}").palevioletred
             puts Rainbow("by: #{book.author}").palevioletred
             puts Rainbow("price: #{book.price}").palevioletred
-            want_more_info(book)     
+            want_more_info(book)
+        elsif input == "exit"
+            self.exit  
         else 
-            self.exit
+            get_book_method
         end
     end
 
     def want_more_info(book_object)
-        puts Rainbow("\n Type YES for more information - type 'list' to see the selection of books again.\n").deepskyblue
+        puts Rainbow("\n Type 'YES' for more information - Type 'list' to see the selection of books again - Type 'exit' to quit..\n").deepskyblue
         input = gets.strip.upcase
         until ["Y", "YES", "list", "LIST", "EXIT", "exit"].include?(input)
-            puts Rainbow("Please type YES or LIST to continue or exit to quit.").deepskyblue
+            puts Rainbow("Please type 'YES' or 'list' to continue - Type 'exit' to quit.").deepskyblue
             input = gets.strip.upcase
         end
+        
         if input == "Y" || input == "YES"
             puts Rainbow("\n...Fetching more info...\n").deepskyblue
             PermaPlanCli::Scraper.scrape_details(book_object)
             puts Rainbow("#{book_object.title}").mediumpurple
             puts Rainbow("by:#{book_object.author}\n").mediumpurple
             puts Rainbow("#{book_object.description}\n").mediumpurple
-            show_book_list_again    
-            # get_book_method  
-        elsif input == "list" || "LIST"
+            show_book_list_again      
+        elsif input == "LIST"
             list_books
             get_book_method
-        elsif input == "EXIT" || "exit"
+        else input == "EXIT"
             self.exit
         end
     end
 
     def show_book_list_again
-        puts Rainbow("Type 'list' to see the selection of books again - type 'exit' to quit.\n").deepskyblue
+        puts Rainbow("Type 'list' to see the selection of books again - Type 'exit' to quit.\n").deepskyblue
         show_book_list_again_input = gets.strip.upcase
         until ["list", "LIST", "EXIT", "exit"].include?(show_book_list_again_input)
-            puts Rainbow("Please type LIST to continue or exit to quit.").deepskyblue
+            puts Rainbow("Please type 'list' to continue - Type 'exit' to quit.").deepskyblue
             show_book_list_again_input = gets.strip.upcase
         end
-        if show_book_list_again_input == "LIST" || show_book_list_again_input == "list"
+        if show_book_list_again_input == "LIST"
             list_books
             get_book_method
-        elsif show_book_list_again_input == "EXIT" || "exit"
+        elsif show_book_list_again_input == "EXIT"
             self.exit
         end
     end
