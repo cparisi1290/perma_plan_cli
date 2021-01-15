@@ -2,22 +2,22 @@ class PermaPlanCli::CLI
     attr_accessor :sorted_books
 
     def call
-        tractor = "\u{1F69C}"
+        @tractor = "\u{1F69C}"
         puts Rainbow("\nWelcome to the Perma-Planning Resource App!\n").deepskyblue
         sleep(1)
         puts Rainbow("\nHere are your choice of permaculture books to start on your homestead!").deepskyblue
         sleep(1)
-        puts "                                   " + tractor
+        puts "                                   " + @tractor
         sleep(1)
-        puts "                               " + tractor
+        puts "                               " + @tractor
         sleep(1)
-        puts Rainbow("                           " + tractor + "     "+"Stuck behind a tractor...").palevioletred
+        puts Rainbow("                           " + @tractor + "     "+"Stuck behind a tractor...").palevioletred
         sleep(1)
-        puts "                       " + tractor
+        puts "                       " + @tractor
         sleep(1)
-        puts "                   " + tractor
+        puts "                   " + @tractor
         sleep(1)
-        puts Rainbow("               " + tractor + "       "+"Your list is coming up...").palevioletred
+        puts Rainbow("               " + @tractor + "       "+"Your list is coming up...").palevioletred
         
         PermaPlanCli::Scraper.scrape_books
         sort_books
@@ -69,7 +69,7 @@ class PermaPlanCli::CLI
         end
         
         if input == "Y" || input == "YES"
-            puts Rainbow("\n...Fetching more info...\n").deepskyblue
+            puts "\n" + Rainbow(" ...Fetching more info...").deepskyblue + " " + @tractor
             PermaPlanCli::Scraper.scrape_details(book_object)
             puts Rainbow("#{book_object.title}").mediumpurple
             puts Rainbow("by:#{book_object.author}\n").mediumpurple
