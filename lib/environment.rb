@@ -3,7 +3,7 @@ require 'open-uri'
 require 'pry'
 require 'rainbow'
 
-require_relative "perma_plan_cli/version.rb"
-require_relative "perma_plan_cli/cli.rb"
-require_relative "perma_plan_cli/book.rb"
-require_relative "perma_plan_cli/scraper.rb"
+require_relative "perma_plan_cli/version"
+require_relative "perma_plan_cli/cli"
+require_relative "perma_plan_cli/book"
+require_relative "perma_plan_cli/scraper"

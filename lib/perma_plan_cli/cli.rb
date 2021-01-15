@@ -19,10 +19,22 @@ class PermaPlanCli::CLI
         sleep(1)
         puts Rainbow("               " + @tractor + "       "+"Your list is coming up...").palevioletred
         
-        PermaPlanCli::Scraper.scrape_books
+        get_books
         sort_books
         list_books
         get_book_method
+    end
+
+    def get_books
+        book_info = PermaPlanCli::Scraper.scrape_books
+        book_info.map do |book_hash|
+            PermaPlanCli::Book.new(
+                book_hash[:title],
+                book_hash[:author],
+                book_hash[:price],
+                book_hash[:url]
+            )
+        end
     end
 
     def sort_books        
